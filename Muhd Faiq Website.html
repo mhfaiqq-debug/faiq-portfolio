@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Faiq — Portfolio</title>
+  <meta name="description" content="Portfolio of Muhammad Faiq Bin Omar — Civil Engineering student at UTM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TsKQmM9F4Drx2O8o9wH8EK8Jm0T4m5f6Hc2I3h1vI2qS6oZ8zqv2h3otj1w6V8m7eN8Vf3gD4X5YQ8E4n5Q1xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- GSAP / ScrollTrigger -->
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.40/bundled/lenis.min.js" defer></script>
+  <!-- THREE.js for 3D hero background -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor cursor--follower"></div>
+
+  <!-- Progress bar -->
+  <div id="scroll-progress"></div>
+
+  <header id="site-header" class="glass">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <span class="brand__logo">FO</span>
+        <span class="brand__name">Muhammad&nbsp;Faiq&nbsp;Bin&nbsp;Omar</span>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#achievements" class="nav__link">Achievements</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+          <li><a class="btn btn--sm btn--primary" href="assets/cv/Muhammad_Faiq_Bin_Omar_CV.pdf" download>Download CV</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu glass" id="mobileMenu" aria-hidden="true">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#achievements" class="mobile-link">Achievements</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a class="btn btn--primary w-100" href="assets/cv/Muhammad_Faiq_Bin_Omar_CV.pdf" download>Download CV</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="container hero__inner">
+      <div class="hero__intro">
+        <div class="badge">Dear&nbsp;Stranger&nbsp;👋</div>
+        <h1 class="hero__title">
+          I craft <span class="accent">civil</span> &amp; <span class="accent">AI‑assisted</span> solutions<br/>
+          for resilient infrastructure.
+        </h1>
+        <p class="hero__subtitle">
+          Final‑year Civil Engineering student @ UTM • Passionate about structural systems,
+          digital twins, and data‑driven design. Curious mind, clean execution.
+        </p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn--lg btn--primary magnetic">Explore My Work</a>
+          <a href="#contact" class="btn btn--lg btn--ghost magnetic">Contact Me</a>
+        </div>
+        <div class="socials">
+          <a href="mailto:mhfaiqq@gmail.com" class="social" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+60174049776" class="social" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://www.linkedin.com/in/muhdfaiq48" target="_blank" class="social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="hero__photo glass">
+        <img src="assets/profile.jpg" alt="Portrait of Muhammad Faiq Bin Omar" />
+      </div>
+    </div>
+    <div class="hero__marquee">
+      <div class="marquee__track">
+        <span>AutoCAD</span><span>MATLAB</span><span>Robot Structural</span><span>MS Office</span><span>Illustrator</span><span>Canva</span><span>CapCut</span><span>Digital Marketing</span>
+        <span>AutoCAD</span><span>MATLAB</span><span>Robot Structural</span><span>MS Office</span><span>Illustrator</span><span>Canva</span><span>CapCut</span><span>Digital Marketing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container grid-2">
+      <div class="about__copy">
+        <h2 class="section__title">A little bit <span class="accent">about me</span></h2>
+        <p>
+          I’m <strong>Muhammad Faiq Bin Omar</strong>, a Civil Engineering student at
+          <strong>Universiti Teknologi Malaysia (UTM)</strong>, grounded in structural analysis and
+          materials, with a growing toolkit in <em>data</em> and <em>AI‑assisted</em> workflows.
+          I care about clarity, safety and aesthetics in the built environment.
+        </p>
+        <p>
+          Recently, I explored <b>microbially induced carbonate precipitation (MICP)</b> for
+          heavy‑metal soil improvement, contributed to noise barrier components for LRT corridors,
+          and led an outbound research program in Indonesia. On the side, I prototype small tools
+          to make design iteration faster (dashboards, optimizers, and QA helpers).
+        </p>
+        <ul class="bullets">
+          <li>Based in <b>Kuching, Sarawak</b> • Open to relocation.</li>
+          <li>Clear & friendly communicator; documentation first.</li>
+          <li>Strong with <b>CAD</b>, spreadsheets, and experiments.</li>
+        </ul>
+        <div class="about__buttons">
+          <a class="btn btn--primary magnetic" href="assets/cv/Muhammad_Faiq_Bin_Omar_CV.pdf" download>
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+          <a class="btn btn--ghost magnetic" href="mailto:mhfaiqq@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Email Me
+          </a>
+        </div>
+      </div>
+      <div class="about__cards">
+        <div class="stat glass">
+          <div class="stat__num">3+</div>
+          <div class="stat__label">Infra Projects</div>
+        </div>
+        <div class="stat glass">
+          <div class="stat__num">2</div>
+          <div class="stat__label">Research Tracks</div>
+        </div>
+        <div class="stat glass">
+          <div class="stat__num">5+</div>
+          <div class="stat__label">Tools Prototyped</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Software &amp; Tools</h2>
+      <div class="chip-cloud">
+        <span class="chip">AutoCAD</span>
+        <span class="chip">MATLAB</span>
+        <span class="chip">Robot Structural</span>
+        <span class="chip">Microsoft Office</span>
+        <span class="chip">Adobe Illustrator</span>
+        <span class="chip">Canva</span>
+        <span class="chip">CapCut</span>
+        <span class="chip">Digital Marketing</span>
+        <span class="chip chip--ghost">Python (basics)</span>
+        <span class="chip chip--ghost">Power BI (basics)</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card glass tilt">
+          <i class="fa-solid fa-drafting-compass"></i>
+          <h3>CAD &amp; Modeling</h3>
+          <p>2D drafting, detail drawings, and conceptual layouts for structures.</p>
+        </div>
+        <div class="skill-card glass tilt">
+          <i class="fa-solid fa-square-root-variable"></i>
+          <h3>Computation</h3>
+          <p>MATLAB for data analysis, plotting and quick checks.</p>
+        </div>
+        <div class="skill-card glass tilt">
+          <i class="fa-solid fa-microscope"></i>
+          <h3>Materials &amp; Testing</h3>
+          <p>MICP, soil contamination labs, QA/QC documentation.</p>
+        </div>
+        <div class="skill-card glass tilt">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Reporting</h3>
+          <p>Well-structured Excel trackers, PowerPoint, and dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (Zanjeel-style cards / timeline) -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section__title">Professional Experience</h2>
+      <div class="timeline">
+        <article class="timeline__item glass tilt">
+          <div class="timeline__meta">
+            <img class="timeline__logo" src="assets/msi-logo.svg" alt="Muhibbah Steel Industries logo" />
+            <div>
+              <h3>Muhibbah Steel Industries Sdn. Bhd.</h3>
+              <p class="role">Project Engineer Intern</p>
+              <p class="time">2023 • Port Klang</p>
+            </div>
+          </div>
+          <ul class="timeline__list">
+            <li>Assisted on <b>LRT, DASH, SUKE</b> noise barrier components.</li>
+            <li>Preventive maintenance tracking → <b>~25% fewer failures</b>.</li>
+            <li>QA/QC checklists, NCRs, and supplier coordination.</li>
+          </ul>
+        </article>
+
+        <article class="timeline__item glass tilt">
+          <div class="timeline__meta">
+            <img class="timeline__logo" src="assets/utm-logo.svg" alt="UTM logo" />
+            <div>
+              <h3>UTM — Indonesia Outbound Program</h3>
+              <p class="role">Director &amp; Researcher</p>
+              <p class="time">2023 • Padang, Indonesia</p>
+            </div>
+          </div>
+          <ul class="timeline__list">
+            <li>Led a 2‑week program (10+ students) and field data collection.</li>
+            <li>FYP research on <b>zinc‑contaminated soils</b> via MICP.</li>
+            <li>Coordinated with labs, local authorities and partners.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section--alt">
+    <div class="container">
+      <div class="projects__head">
+        <h2 class="section__title">Selected Projects</h2>
+        <div class="filters">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="infra">Infrastructure</button>
+          <button class="filter" data-filter="research">Research</button>
+          <button class="filter" data-filter="ai">AI Experiments</button>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card glass tilt" data-tags="infra">
+          <div class="project-card__media">
+            <div class="tag">Infrastructure</div>
+          </div>
+          <h3>Noise Barrier – LRT3 Corridor</h3>
+          <p>Assisted with components and documentation for urban transit noise barriers.</p>
+          <div class="techs"><span>AutoCAD</span><span>Excel</span><span>QA/QC</span></div>
+        </article>
+
+        <article class="project-card glass tilt" data-tags="research">
+          <div class="project-card__media">
+            <div class="tag">Research</div>
+          </div>
+          <h3>FYP — Zinc vs MICP Precipitation</h3>
+          <p>Impact of varying zinc concentrations on carbonate precipitation via MICP.</p>
+          <div class="techs"><span>Lab</span><span>MATLAB</span><span>Reporting</span></div>
+        </article>
+
+        <article class="project-card glass tilt" data-tags="infra">
+          <div class="project-card__media">
+            <div class="tag">Infrastructure</div>
+          </div>
+          <h3>Hydrology & Flood Mitigation</h3>
+          <p>Conceptual flood routing and mitigation strategies for urban basins.</p>
+          <div class="techs"><span>MATLAB</span><span>Excel</span><span>Charts</span></div>
+        </article>
+
+        <article class="project-card glass tilt" data-tags="ai">
+          <div class="project-card__media">
+            <div class="tag">AI</div>
+          </div>
+          <h3>AI‑Assisted Structural Optimizer</h3>
+          <p>Exploratory tool to suggest lighter sections with safety margins.</p>
+          <div class="techs"><span>Python</span><span>Heuristics</span><span>Dashboard</span></div>
+        </article>
+
+        <article class="project-card glass tilt" data-tags="ai">
+          <div class="project-card__media">
+            <div class="tag">AI</div>
+          </div>
+          <h3>Civil Chat Assistant</h3>
+          <p>A prototype chatbot to recall codes &amp; common checks for students.</p>
+          <div class="techs"><span>Prompting</span><span>Docs</span><span>UX</span></div>
+        </article>
+
+        <article class="project-card glass tilt" data-tags="research">
+          <div class="project-card__media">
+            <div class="tag">Research</div>
+          </div>
+          <h3>Soil Improvement Dashboard</h3>
+          <p>Simple dashboard to record trials, photos, and measured strengths.</p>
+          <div class="techs"><span>Excel</span><span>PowerPoint</span><span>Photos</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS / COUNTERS -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <h2 class="section__title">Achievements</h2>
+      <div class="counters">
+        <div class="counter glass"><span data-counter="20">0</span><small>+ Experiments</small></div>
+        <div class="counter glass"><span data-counter="3">0</span><small>+ Team Projects</small></div>
+        <div class="counter glass"><span data-counter="2">0</span><small>+ Research Topics</small></div>
+        <div class="counter glass"><span data-counter="1">0</span><small>International Program</small></div>
+      </div>
+      <div class="ticker">
+        <div class="ticker__track">
+          <span>Curious</span><span>Precise</span><span>Reliable</span><span>Visual</span><span>Hands‑on</span>
+          <span>Curious</span><span>Precise</span><span>Reliable</span><span>Visual</span><span>Hands‑on</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section--alt">
+    <div class="container contact">
+      <div class="contact__intro">
+        <h2 class="section__title">Let’s talk</h2>
+        <p>What led you here? What are you looking for? I’d love to hear from you.</p>
+        <div class="contact__cards">
+          <a class="contact-card glass tilt" href="mailto:mhfaiqq@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>mhfaiqq@gmail.com</p>
+            </div>
+          </a>
+          <a class="contact-card glass tilt" href="https://www.linkedin.com/in/muhdfaiq48" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            <div>
+              <h4>LinkedIn</h4>
+              <p>linkedin.com/in/muhdfaiq48</p>
+            </div>
+          </a>
+          <a class="contact-card glass tilt" href="tel:+60174049776">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>+60 17 404 9776</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <form class="form glass" id="contactForm" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="What's your name?" required />
+            <small class="error">Please enter your name</small>
+          </div>
+          <div class="field">
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="What's your email?" required />
+            <small class="error">Please enter a valid email</small>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field w-100">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="What do you want to say?" required></textarea>
+            <small class="error">Please write a message</small>
+          </div>
+        </div>
+        <button type="submit" class="btn btn--primary magnetic">Send Message</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__logo">FO</span>
+        <span>© 2025 • Built with care.</span>
+      </div>
+      <div class="footer__links">
+        <a href="mailto:mhfaiqq@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/muhdfaiq48" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#hero">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
